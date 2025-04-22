@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Available Jobs</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}">
+</head>
+<body>
+  <div class="container mt-5">
+    <h2 class="mb-4 text-center">Available Freelance Jobs</h2>
+
+    {% for job in jobs %}
+      <div class="card mb-3">
+        <div class="card-body">
+          <h5 class="card-title">{{ job.title }}</h5>
+          <p class="card-text">{{ job.description }}</p>
+          <a href="{{ url_for('apply', job_title=job.title) }}" class="btn btn-primary">Apply</a>
+        </div>
+      </div>
+    {% endfor %}
+
+    <div class="text-center mt-4">
+      <a href="{{ url_for('logout') }}" class="btn btn-outline-danger">Logout</a>
+    </div>
+  </div>
+</body>
+</html>
