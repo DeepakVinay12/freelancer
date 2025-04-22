@@ -49,9 +49,7 @@ def signup():
                 'email': email,
                 'name': name,
                 'password': password,
-                'role': role,
-                'phone': '',
-                'skills': skills
+                'role': role
             })
             flash('Registration successful! Please login.', 'success')
             return redirect(url_for('login'))
