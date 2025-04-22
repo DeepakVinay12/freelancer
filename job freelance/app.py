@@ -317,4 +317,4 @@ def services3():
     return render_template('service-details-3.html')
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(port=5000, debug=False, host='0.0.0.0')
